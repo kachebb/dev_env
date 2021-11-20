@@ -3,32 +3,17 @@
 ### Oh my zsh
 **Installation**
 https://github.com/ohmyzsh/ohmyzsh
-**Plugins**
-```
-plugins=(
-    git
-    jsontools
-    gitfast
-)
-```
 
-**Adjustment**
-* run `git config --add oh-my-zsh.hide-status 1` and `git config --add oh-my-zsh.hide-dirty 1`, otherwise it will be slow when running in big git repo
-* Change the theme to "clean"
+`cp ./custom.zsh ~/.oh-my-zsh/custom/'
 
 ### ssh
 [Generate sshkey](https://docs.github.com/en/enterprise-server@3.0/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
 [Add sshkey to github](https://docs.github.com/en/enterprise-server@3.0/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
-Host *
-  ServerAliveInterval 120
-  ServerAliveCountMax 720
-
-### .bash_profile
+copy the content of `sshconfig` to ~/.ssh/sshconfig
 
 ## Git
-Copy .gitconfig to ~/.gitconfig
-
 ```
 git config --global user.name "<name>" 
 git config --global user.email "<email>"
@@ -56,6 +41,7 @@ eval "$(pyenv init --path)"
 ### Python
 **Installation**
 ```
+brew install pyenv
 pyenv install --list
 pyenv install <version>
 ```
@@ -68,8 +54,11 @@ pyenv local
 
 ## Java
 ### IntelliJ
+Import `intellij_settings.zip`
+
 ## MySQL
 brew install mysql@8.0
+
 brew link --force mysql@8.0
 
 copy .my.cnf over to ~/.my.cnf
@@ -78,13 +67,7 @@ copy .my.cnf over to ~/.my.cnf
 
 
 ## Kubernetes
-**Install client**
+```
 brew install kubernetes-cli
 brew install kubectx
-
-**Command alias**
-```
-alias k='kubectl'
-alias kctx='kubectx'
-alias kns='kubens'
 ```
