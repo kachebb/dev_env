@@ -1,0 +1,38 @@
+[user]
+	name = kaichen zhao
+	email = zhaokaichen@gmail.com
+[push]
+	default = current
+[branch]
+	autosetuprebase = always
+[alias]
+        ci = commit
+        cm = commit -m
+        ca = commit --amend
+        st = status
+        unstage = reset HEAD --  # move files from the index to the workspace
+        last = log -1 HEAD       # show the most recent entry in the log
+        lg = log --oneline --decorate --graph   # show the commit graph with branch and tag labels
+        co = checkout
+        cob= checkout -b
+        br = branch --color
+        ri = rebase -i
+        pu = pull
+        cp = cherry-pick
+        ls = log --stat
+        staged = diff --cached --color
+        # Awesome gitk-in-cli like convenience
+        hlog = log --date-order --all --graph --format=\"%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s\"
+        d = diff --color-words
+        gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
+        amend = commit --amend -C HEAD
+        recents = for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads
+        hist = log -p -M -C --find-copies-harder --follow
+        um = !git checkout master && git pull && git checkout - && git pull && git merge master
+        # list aliases
+        aliases = !git config --get-regexp ^alias\\. | sort
+        # add all changes (including untracked files) and commit with message
+        cam = !sh -c 'git add -A && git commit -m \"$1\"' -
+        poh = push origin HEAD
+        oneline = log --oneline
+        patch = add --patch

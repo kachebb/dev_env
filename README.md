@@ -12,7 +12,7 @@ plugins=(
 )
 ```
 
-**Chore**
+**Adjustment**
 * run `git config --add oh-my-zsh.hide-status 1` and `git config --add oh-my-zsh.hide-dirty 1`, otherwise it will be slow when running in big git repo
 * Change the theme to "clean"
 
@@ -20,10 +20,9 @@ plugins=(
 [Generate sshkey](https://docs.github.com/en/enterprise-server@3.0/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 [Add sshkey to github](https://docs.github.com/en/enterprise-server@3.0/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
-TODO: Copy ssh config over
-
-
-
+Host *
+  ServerAliveInterval 120
+  ServerAliveCountMax 720
 
 ### .bash_profile
 
